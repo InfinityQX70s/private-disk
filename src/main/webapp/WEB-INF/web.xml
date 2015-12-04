@@ -1,0 +1,62 @@
+<!DOCTYPE web-app PUBLIC
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+
+    <context-param>
+        <param-name>directory</param-name>
+        <param-value>/files/</param-value>
+    </context-param>
+
+    <servlet>
+        <servlet-name>uploadServlet</servlet-name>
+        <servlet-class>org.infinity.UploadServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>searchServlet</servlet-name>
+        <servlet-class>org.infinity.SearchServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>mainServlet</servlet-name>
+        <servlet-class>org.infinity.MainServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>downloadServlet</servlet-name>
+        <servlet-class>org.infinity.DownloadServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>deleteServlet</servlet-name>
+        <servlet-class>org.infinity.DeleteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>uploadServlet</servlet-name>
+        <url-pattern>/upload</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>searchServlet</servlet-name>
+        <url-pattern>/search</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>downloadServlet</servlet-name>
+        <url-pattern>/download</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>deleteServlet</servlet-name>
+        <url-pattern>/delete</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>mainServlet</servlet-name>
+        <url-pattern>/index.jsp</url-pattern>
+    </servlet-mapping>
+    <!--<servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>/static/*</url-pattern>
+    </servlet-mapping>-->
+    <resource-ref>
+        <description>Pool of data bases connections</description>
+        <res-ref-name>jdbc/file</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+    </resource-ref>
+</web-app>
