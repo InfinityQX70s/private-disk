@@ -67,7 +67,7 @@ public class UploadServlet extends HttpServlet {
                 document.setSize(filePart.getSize());
                 document.setSha1(sb.toString());
                 DataManagement.getInstance().insertFile(document);
-            }else {
+            } else {
                 f.delete();
             }
         } catch (SQLException e) {
